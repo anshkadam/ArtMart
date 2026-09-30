@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArtMart — Discover Art. Support Artists.</title>
+  <meta name="description" content="ArtMart is a marketplace for discovering and buying original digital artwork from independent artists.">
+  <style>
+    :root{--bg:#faf8f5;--card:#fff;--ink:#171717;--muted:#6d6a66;--line:#e9e4dd;--accent:#171717;--soft:#f0ece6}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+    a{text-decoration:none;color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 22px}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .logo{font-size:25px;font-weight:850;letter-spacing:-1px}.logo span{font-weight:400}
+    .navlinks{display:flex;gap:26px;color:#555;font-size:14px}.navlinks a:hover{color:#111}
+    .hero{padding:82px 0 60px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:750;color:#777}
+    h1{font-size:clamp(48px,7vw,82px);line-height:.94;letter-spacing:-5px;margin:14px 0 24px}
+    .hero p{font-size:18px;line-height:1.65;color:var(--muted);max-width:590px}
+    .actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{border:1px solid #222;border-radius:999px;padding:13px 21px;font-weight:700;font-size:14px;display:inline-block}.btn.dark{background:#171717;color:#fff}.btn.light{background:#fff}
+    .hero-art{height:390px;border-radius:28px;background:linear-gradient(145deg,#ded5ca,#f5efe8);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .hero-art:before{content:"";width:250px;height:310px;background:linear-gradient(150deg,#272727,#8c8175 45%,#e8dfd5);transform:rotate(-8deg);border-radius:9px;box-shadow:0 25px 50px #0002}
+    .hero-art:after{content:"ARTMART";position:absolute;bottom:24px;right:25px;font-size:12px;letter-spacing:3px;font-weight:800;color:#ffffffbb}
+    section{padding:58px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section-head h2{font-size:31px;letter-spacing:-1.5px;margin:0}.section-head p{color:var(--muted);margin:6px 0 0}
+    .chips{display:flex;gap:9px;overflow:auto;padding-bottom:20px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;white-space:nowrap;font-size:13px}.chip.active{background:#171717;color:#fff;border-color:#171717}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.art{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.thumb{aspect-ratio:1/1;background:linear-gradient(135deg,#ddd1c3,#837a70);display:flex;align-items:center;justify-content:center;font-size:48px}.thumb.two{background:linear-gradient(135deg,#d9e0e1,#8b9b9d)}.thumb.three{background:linear-gradient(135deg,#e6d4ca,#9d7563)}.art-info{padding:16px}.art-info h3{margin:0 0 5px;font-size:16px}.artist{font-size:13px;color:var(--muted)}.price{margin-top:14px;display:flex;justify-content:space-between;align-items:center;font-weight:800}.buy{font-size:12px;border:1px solid var(--line);padding:8px 11px;border-radius:999px}
+    .how{background:#171717;color:#fff;border-radius:28px;padding:45px}.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px}.step span{font-size:12px;color:#aaa}.step h3{margin:8px 0}.step p{color:#bbb;line-height:1.6;font-size:14px}
+    .sell{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.sell h2{font-size:42px;letter-spacing:-2px;margin:0 0 15px}.sell p{color:var(--muted);line-height:1.7}.box{background:#fff;border:1px solid var(--line);padding:28px;border-radius:22px}.box label{font-size:13px;font-weight:700;display:block;margin:0 0 7px}.box input,.box textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;margin-bottom:15px;font:inherit;background:#fafafa}.box textarea{min-height:90px;resize:vertical}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px;display:flex;justify-content:space-between}
+    @media(max-width:800px){.hero,.sell{grid-template-columns:1fr}.hero{padding-top:55px}.hero-art{height:300px}.grid{grid-template-columns:1fr 1fr}.how-grid{grid-template-columns:1fr}.navlinks{display:none}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}h1{letter-spacing:-3px}.how{padding:30px 24px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">Art<span>Mart</span></a>
+      <div class="navlinks"><a href="#explore">Explore</a><a href="#artists">For Artists</a><a href="#how">How it works</a></div>
+      <a class="btn dark" href="#artists">Sell Art</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">A marketplace for independent artists</div>
+          <h1>Art worth<br>discovering.</h1>
+          <p>Discover original digital artwork from independent creators. Find something you love, support an artist, and make it yours.</p>
+          <div class="actions"><a class="btn dark" href="#explore">Explore artwork</a><a class="btn light" href="#artists">Sell your art</a></div>
+        </div>
+        <div class="hero-art" aria-label="Featured artwork preview"></div>
+      </section>
+
+      <section id="explore">
+        <div class="section-head"><div><h2>Explore artwork</h2><p>A starter collection for the ArtMart marketplace.</p></div></div>
+        <div class="chips"><span class="chip active">All</span><span class="chip">Abstract</span><span class="chip">Illustration</span><span class="chip">Minimal</span><span class="chip">Photography</span><span class="chip">Digital</span></div>
+        <div class="grid">
+          <article class="art"><div class="thumb">◐</div><div class="art-info"><h3>Quiet Geometry</h3><div class="artist">by Maya Studio</div><div class="price">₹299 <a class="buy" href="mailto:hello@artmart.example?subject=Purchase%20request%20-%20Quiet%20Geometry">Buy</a></div></div></article>
+          <article class="art"><div class="thumb two">✦</div><div class="art-info"><h3>Blue Hour</h3><div class="artist">by Arjun Creates</div><div class="price">₹499 <a class="buy" href="mailto:hello@artmart.example?subject=Purchase%20request%20-%20Blue%20Hour">Buy</a></div></div></article>
+          <article class="art"><div class="thumb three">⌁</div><div class="art-info"><h3>Warm Lines</h3><div class="artist">by Studio N</div><div class="price">₹399 <a class="buy" href="mailto:hello@artmart.example?subject=Purchase%20request%20-%20Warm%20Lines">Buy</a></div></div></article>
+        </div>
+      </section>
+
+      <section id="how">
+        <div class="how">
+          <div class="eyebrow">Simple by design</div>
+          <h2>From artist to collector.</h2>
+          <div class="how-grid">
+            <div class="step"><span>01</span><h3>Discover</h3><p>Browse original artwork from independent artists and find a style that fits you.</p></div>
+            <div class="step"><span>02</span><h3>Purchase</h3><p>Choose an artwork and contact the seller to complete the purchase.</p></div>
+            <div class="step"><span>03</span><h3>Support</h3><p>Your purchase helps independent artists keep creating and sharing their work.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="artists">
+        <div class="sell">
+          <div><div class="eyebrow">For creators</div><h2>Turn your art into an opportunity.</h2><p>ArtMart is designed to give independent artists a simple place to showcase their work. Start with a small collection and grow with your audience.</p></div>
+          <form class="box" onsubmit="event.preventDefault(); alert('Thanks! Your artist interest form is ready to connect once you add your email/form service.');">
+            <label>Your name</label><input required placeholder="Artist name">
+            <label>Email</label><input required type="email" placeholder="you@example.com">
+            <label>Tell us about your art</label><textarea placeholder="What do you create?"></textarea>
+            <button class="btn dark" type="submit">Apply as an artist</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer><div>© 2026 ArtMart</div><div>Discover. Create. Support.</div></footer>
+  </div>
+</body>
+</html>
